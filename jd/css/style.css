@@ -401,6 +401,10 @@ nav a:hover{
 
 /*无缝轮播*/
 
+.button::-webkit-scrollbar{
+    display: none;
+}
+
 .button{
     width: 100%;
     overflow: scroll;
@@ -965,8 +969,8 @@ a:hover, a:focus {
 }
 
 .repertoire .txt-look{
-    background-size: cover;
-    background-image: url(../img/kill/kill-bg.png);
+    background-size: contain;
+    background-image: url(../img/repertoire/repertoire-h1-bg.png);
 }
 
 
@@ -984,7 +988,7 @@ a:hover, a:focus {
 
 .repertoire p{
     padding-top: 5px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .repertoire span{
@@ -1082,34 +1086,102 @@ filter:blur(15px);
     background-image: url(../img/top.png);
     background-size: cover;
     transition: 2s;
+    display: none;
 }
 
 
 /*        分类页的样式        */
-.sort{
-    text-decoration: none;
-}
-.sort .main{
-    text-align: center;
-}
-.sort .main .container-fluid{
-    padding: 0;
-}
-.sort .main .row{
+.stay .x-left{
+    height: 460px;
+    overflow: hidden;
     margin: 0;
 }
-.sort .main .col-xs-3,
-.sort .main .col-xs-9,
-.sort .main .col-xs-4
+
+.stay .x-left{
+    overflow: scroll;
+    background-color: #f8f8f8;
+}
+
+.stay .x-left .active{
+    color: red;
+    background-color: #fff;
+}
+
+.stay .sort-list{
+    height: 460px;
+    overflow: hidden;
+}
+
+.stay .x-right{
+    overflow: scroll;
+}
+
+/*scrollbar :隐藏滚动条 */
+
+.stay .x-left::-webkit-scrollbar,.stay .x-right::-webkit-scrollbar{
+    display: none;
+}
+
+.stay .x-left li{
+    font-size: 14px;
+    padding: 10px;
+}
+
+.stay .main .x-right > .active{
+    display: block;
+}
+
+
+
+
+.stay .search{
+    position: relative;
+}
+
+.stay .search input{
+    background-color: #f7f7f7;
+    padding-left: 40px;
+}
+
+.stay .search .left i,.stay .search .right i{
+    color: #636570;
+    padding-top: 5px;
+}
+
+.stay .search .center i{
+    padding-left: 5px;
+}
+
+.stay{
+    text-decoration: none;
+}
+
+.stay .main{
+    text-align: center;
+}
+
+.stay .main .container-fluid{
+    padding: 0;
+}
+
+.stay .main .row{
+    margin: 0;
+}
+
+.stay .main .col-xs-3,
+.stay .main .col-xs-9,
+.stay .main .col-xs-4
 {
     padding: 0;
 }
-.sort .main .sort-nav li{
+
+.stay .main .sort-nav li{
     font-size: 14px;
     padding: 10px;
     list-style: none;
 }
-.sort .main .sort-nav li.active{
+
+.stay .main .sort-nav li.active{
     color: red;
     background: #fff;
 }
@@ -1117,43 +1189,47 @@ filter:blur(15px);
 .sort-list{
     background: #fff;
 }
+
 .sort-list a.active{
     text-decoration: none;
 }
-.sort .main .sort-list>div{
+
+.stay .main .sort-list>div{
     display: none;
 }
-.sort .main .sort-list>.active{
-    display: block;
-}
-.sort .main .sort-list ul{
+
+.stay .main .sort-list ul{
     padding: 3px 5px;
 }
-.sort .main .sort-list li{
+
+.stay .main .sort-list li{
     list-style: none;
 }
-.sort .main .sort-list h3{
+
+.stay .main .sort-list h3{
     font-size: 14px;
     text-align: left;
     font-weight: bold;
-    padding-left: 5px;
+    font-weight: 600;
 }
-.sort .main img{
+
+.stay .main img{
     width: 100%;
 }
-.sort .main .col-xs-4{
+
+.stay .main .col-xs-4{
     height: 109px;
 }
-.sort .main .col-xs-4 img{
+
+.stay .main .col-xs-4 img{
     padding: 5px;
 }
+
 .sort-list a:hover,
 .sort-list a.active,
 .sort-list a.focus{
     text-decoration: none;
 }
-
-
 
 li{
     list-style: none;

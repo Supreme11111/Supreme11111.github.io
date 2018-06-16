@@ -1,5 +1,5 @@
+//新闻快讯文本轮播
 
-213+546//新闻快讯文本轮播
 
 
 //setInterval(function(){
@@ -24,18 +24,21 @@
  var cles = document.querySelector(".guang span");
  var guang = document.querySelector(".guang");
  var search = document.querySelector(".search");
-if(sessionStorage.guang == "false"){
-    guang.style.display = "none";
-    search.style.top = 0;
-}else{
-    guang.style.display = "block";
-    search.style.top = "auto";
+if(guang !=null){
+    if(sessionStorage.guang == "false"){
+        guang.style.display = "none";
+        search.style.top = 0;
+        }else{
+            guang.style.display = "block";
+            search.style.top = "auto";
+    }
+    
+    cles.onclick = function(){
+        guang.style.display = "none";
+        sessionStorage.guang = "false"
+    }
 }
 
-cles.onclick = function(){
-    guang.style.display = "none";
-    sessionStorage.guang = "false"
-}
 
 
 
@@ -58,7 +61,7 @@ cles.onclick = function(){
 
 
 
-//                  京-*/东秒杀倒计时js
+//                  京东秒杀倒计时js
 function run(){
     var date1 = new Date("2019/6/1 15:34:00");//规定时间
     var date2 = new Date();//当前时间
@@ -158,23 +161,14 @@ new Vue({
 })         
         
         
+
+
 //回到顶部
-
-
-window.onscroll = function(){
-    if(document.body.scrollTop > 300){
-        document.getElementById("top").style.display = "block";
-    }else{
-        document.getElementById("top").style.display = "none";
-    }
-}
-
-
-
+var fanhuidingbu = document.querySelector("#top");
 fanhuidingbu.addEventListener("click",function(){
     var t = setInterval(function(){
-        document.body.scrollTop = document.body.scrollTop -20;
-        document.documentElement.scrollTop = document.documentElement.scrollTop -20;
+        document.body.scrollTop = document.body.scrollTop -100;
+        document.documentElement.scrollTop = document.documentElement.scrollTop -100;
         if(document.body.scrollTop === 0){
             clearInterval(t);
         }  
@@ -183,16 +177,29 @@ fanhuidingbu.addEventListener("click",function(){
 
 
 
-//顶部导航滚动条判断更换背景        
-window.onscroll = function(){
-    if(document.body.scrollTop > 90){
-        document.querySelector(".search").style.background = "red";
-        search.style.top = 0;
-    }else{
-        document.querySelector(".search").style.background = "none";
-        search.style.top = "auto";
+//顶部导航滚动条判断更换背景 
+if(search != null){
+    window.onscroll = function(){
+        if(document.body.scrollTop > 90){
+            document.querySelector(".search").style.background = "red";
+            search.style.top = 0;
+
+        }else{
+            document.querySelector(".search").style.background = "none";
+            search.style.top = "auto";
+        }
+        
+        
+        
+        
+        if(document.body.scrollTop > 400){
+            document.getElementById("top").style.display = "block"
+        }else{
+            document.getElementById("top").style.display = "none"
+        }
     }
-}        
+}
+        
    
 
 
@@ -389,7 +396,6 @@ for(var i=0; i<list.length;i++){
     list[i].index = i;
     list[i].onclick = function(){
         for(var b=0; b<list.length; b++){
-            console.log(lost[b]);
             list[b].classList.remove("active");
             lost[b].classList.remove("active");
         }
